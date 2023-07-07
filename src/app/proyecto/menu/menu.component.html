@@ -1,0 +1,69 @@
+<br><br><br>
+<header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-scroll shadow-0"
+        style="background-color: #1D4047;">
+        <div class="container">
+            <div class="logo-container">
+                <a class="logo-link">
+                    <img src="assets/logo_transparente.png"
+                        class="img-izquierda"
+                        alt="imagen">
+                </a>
+                <button class="navbar-toggler ps-0" type="button"
+                    data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarExample01"
+                    aria-controls="navbarExample01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span
+                        class="d-flex justify-content-start align-items-center">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link px-3" routerLink="/home">Inicio</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link px-3" routerLink="/CatalogoComponent">Catalogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" routerLink="/AdministracionComponent">Administracion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#!">Finanzas</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link px-3" href="#!">Empleados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" routerLink="/ProveedoresComponent">Proveedores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#!">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#!">Acerca De</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" routerLink="/RegistroComponent">Registrate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-3" routerLink="/LoginComponent">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script type="text/javascript">
+    window.addEventListener('scroll', function () {
+      var header = document.querySelector('header')
+      header.classList.toggle('abajo', window.scrollY > 0)
+    })
+</script>
