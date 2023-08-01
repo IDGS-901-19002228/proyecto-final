@@ -19,11 +19,15 @@ import { AppRoutingModule } from './app.routing.module';
 import { LoginModule } from './proyecto/login/login/login.module';
 import { RouterModule } from '@angular/router';
 import { RegistroModule } from './proyecto/registro/registro/registro.module';
+import { AcercaDeModule } from './proyecto/acerca-de/acerca-de/acerca-de.module';
+import { FooterComponent } from './proyecto/footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    FooterComponent,
     AdministracionComponent,
     HomeComponent
   ],
@@ -40,6 +44,7 @@ import { RegistroModule } from './proyecto/registro/registro/registro.module';
     BrowserAnimationsModule,
     LoginModule,
     RegistroModule,
+    AcercaDeModule,
     AppRoutingModule,
     RouterModule
   ],

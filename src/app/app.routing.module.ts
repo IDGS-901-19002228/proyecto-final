@@ -6,6 +6,8 @@ import { CatalogoComponent } from "./proyecto/catalogo/catalogo.component";
 import { LoginComponent } from "./proyecto/login/login.component";
 import { ProveedoresComponent } from "./proyecto/proveedores/proveedores.component";
 import { RegistroComponent } from "./proyecto/registro/registro.component";
+import { AcercaDeComponent } from "./proyecto/acerca-de/acerca-de.component";
+import { ProductosComponent } from "./proyecto/productos/productos.component";
 
 const routes:Routes=[
     {path: '',redirectTo: '/home', pathMatch:'full'},
@@ -14,7 +16,9 @@ const routes:Routes=[
     {path: 'CatalogoComponent', component: CatalogoComponent },
     {path: 'LoginComponent', component: LoginComponent },
     {path: 'ProveedoresComponent', component: ProveedoresComponent },
-    {path: 'RegistroComponent', component: RegistroComponent }
+    {path: 'RegistroComponent', component: RegistroComponent },
+    {path: 'AcercaDeComponent', component: AcercaDeComponent },
+    {path: 'ProductosComponent', component: ProductosComponent }
 ];
 
 @NgModule({
