@@ -32,3 +32,12 @@
   border-color: #007bff;
 }
 
+.carousel-item {
+  height: 55vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain; /* TAMAÑO DE IMAGEN */
+}
