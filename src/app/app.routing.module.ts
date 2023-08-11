@@ -9,6 +9,20 @@ import { RegistroComponent } from "./proyecto/registro/registro.component";
 import { AcercaDeComponent } from "./proyecto/acerca-de/acerca-de.component";
 import { ProductosComponent } from "./proyecto/productos/productos.component";
 import { MateriaPrimaComponent } from "./proyecto/materia-prima/materia-prima.component";
+import { UsuarioComponent } from "./proyecto/usuario/usuario.component";
+import { AdministrarComponent } from "./proyecto/usuario/administrar/administrar.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { MatInputModule } from "@angular/material/input";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
+import { CarritoCompraComponent } from "./proyecto/carrito/carrito-compra/carrito-compra.component";
+import { PagoComponent } from "./proyecto/carrito/pago/pago.component";
+import { VentasComponent } from "./proyecto/ventas/ventas.component";
 
 const routes:Routes=[
     {path: '',redirectTo: '/home', pathMatch:'full'},
@@ -20,11 +34,31 @@ const routes:Routes=[
     {path: 'RegistroComponent', component: RegistroComponent },
     {path: 'AcercaDeComponent', component: AcercaDeComponent },
     {path: 'ProductosComponent', component: ProductosComponent },
-    {path: 'MateriaPrimaComponent', component: MateriaPrimaComponent }
+    {path: 'MateriaPrimaComponent', component: MateriaPrimaComponent },
+    {path: 'UsuarioComponent', component: UsuarioComponent},
+    {path: 'AdministrarComponent', component: AdministrarComponent},
+    {path: 'CarritoCompraComponent', component: CarritoCompraComponent},
+    {path: 'PagoComponent', component: PagoComponent},
+    {path: 'VentasComponent', component: VentasComponent},
+
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
+    imports: [
+        RouterModule.forRoot(routes),
+        BrowserModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        MatRadioModule,
+        MatFormFieldModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        HttpClientModule
+    ],
+    exports: [
+        RouterModule
+    ],
 })
 export class AppRoutingModule{}

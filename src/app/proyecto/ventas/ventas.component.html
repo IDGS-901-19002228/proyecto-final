@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Ventas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <form>
+            <div>
+                <h2>Registro de Ventas</h2>
+            </div>
+                <div class="mb-3">
+                    <h3>Buscar por Cliente:</h3>
+                    <input type="text" class="form-control" id="clienteBusqueda">
+                </div>
+                    
+                <table class="table table-bordered">
+                    <thead>
+                                <!-- Este modulo contara con un boton para ver los productos del cliente -->
+                                <!-- El carrito solo servira para comprar online -->
+                                <!-- El boton se llamara detalle para que vea los productos -->
+                        <tr>
+                            <th>Folio</th>
+                            <th>Fecha de Venta</th>
+                            <th>Cliente</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0001</td>
+                                <td>2023-01-15</td>
+                                <td>Cliente A</td>
+                                <td>5</td>
+                                <td>$20.00</td>
+                            </tr>
+                            <tr>
+                                <td>0002</td>
+                                <td>2023-02-03</td>
+                                <td>Cliente B</td>
+                                <td>3</td>
+                                <td>$15.00</td>
+                            </tr>
+                                <!-- Agregar más filas según las ventas realizadas -->
+                            </tbody>
+                </table>
+        </form>
+    </div>    
+</body>
+</html>
+
