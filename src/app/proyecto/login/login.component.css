@@ -1,203 +1,161 @@
-.login-box {
-    /* position: absolute;
-    top: 40%;
-    left: 50%; */
-    width: 400px;
-    padding: 40px;
-    margin: 25px auto;
-    /* transform: translate(-50%, -55%); */
-    background: #fff; 
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 77.9vh;
+  background-color: #f2f2f2;
 }
-  
-.login-box p:first-child {
-  margin: 0 0 30px;
-  padding: 0;
-  color: #000;
+
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h2 {
+  color: #333;
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
+  margin-bottom: 40px;
 }
-  
-.login-box .user-box {
+
+.input-container {
   position: relative;
+  margin-bottom: 35px;
 }
-  
-.login-box .user-box input {
+
+.input-container input {
   width: 100%;
-  padding: 10px 0;
+  padding: 7px;
   font-size: 16px;
-  color: #000;
-  margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #000;
-  outline: none;
-  background: transparent;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  transition: border-color 0.3s;
+  
 }
 
-.login-box .user-box label {
+.input-container label {
   position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #000;
-  pointer-events: none;
-  transition: .5s;
-}
-
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-  top: -20px;
-  left: 0;
-  color: #000;
-  font-size: 12px;
-}
-
-.login-box form a {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  font-weight: bold;
-  color: #000;
-  font-size: 16px;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 3px
-}
-
-.login-box a:hover {
-  background: #000; /* Color de fondo del boton */
-  color: #272727;
-  border-radius: 5px;
-}
-
-.login-box a span {
-  position: absolute;
-  display: block;
-}
-
-.login-box a span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #000);
-  animation: btn-anim1 1.5s linear infinite;
-}
-
-@keyframes btn-anim1 {
-  0% {
-    left: -100%;
-  }
-
-  50%,100% {
-    left: 100%;
-  }
-}
-
-.login-box a span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #000);
-  animation: btn-anim2 1.5s linear infinite;
-  animation-delay: .375s
-}
-
-@keyframes btn-anim2 {
-  0% {
-    top: -100%;
-  }
-
-  50%,100% {
-    top: 100%;
-  }
-}
-
-.login-box a span:nth-child(3) {
   bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, #000);
-  animation: btn-anim3 1.5s linear infinite;
-  animation-delay: .75s
-}
-
-@keyframes btn-anim3 {
-  0% {
-    right: -100%;
-  }
-
-  50%,100% {
-    right: 100%;
-  }
-}
-
-.login-box a span:nth-child(4) {
-  bottom: -100%;
   left: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #000);
-  animation: btn-anim4 1.5s linear infinite;
-  animation-delay: 1.125s
+  padding: 10px;
+  font-size: 16px;
+  color: #555;
+  pointer-events: none;
+  transition: transform 0.3s, color 0.3s;
 }
 
-@keyframes btn-anim4 {
-  0% {
-    bottom: -100%;
-  }
-
-  50%,100% {
-    bottom: 100%;
-  }
+.input-container input:focus,
+.input-container input:valid {
+  border-color: #2f3551;
 }
 
-.login-box p:last-child {
-  color: #000;
+.input-container input:focus + label,
+.input-container input:valid + label {
+  transform: translateY(-65%);
   font-size: 14px;
-}
-
-.login-box a.a2 {
-  color: #000;
-  text-decoration: none;
-}
-
-.login-box a.a2:hover {
-  background: transparent;
-  color: #000;
-  border-radius: 5px;
-}
-
-.a2{
-  cursor: pointer;
+  color: #2f3551;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  text-align: center;
+  margin-top: 20px;
 }
 
-input[type="submit"] {
-  width: 100%;
-  background-color: #333;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+.btn-primary {
+  background-color: #2f3551;
+  color: #fff;
+  padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-input[type="submit"]:hover {
-  background-color: #ccc;
-  color: black;
+.btn-primary:hover {
+  background-color: #1a1e32;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.a2 {
+  color: #2f3551;
+  text-decoration: none;
+}
+
+.a2:hover {
+  text-decoration: underline;
+}
+
+/* Menu */
+/* NUEVO ESTILO DEL NUEVO NAV DE EJEMPLO */
+.navbar-brand {
+  letter-spacing: 3px;
+  color: #c24244;
+}
+
+.navbar-brand:hover {
+  color: #c24244;
+}
+
+.navbar-scroll .nav-link,
+.navbar-scroll .fa-bars {
+  color: #fff;
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .fa-bars {
+  color: #7f4722;
+}
+
+.navbar-scrolled {
+  background-color: #ffede7;
+}
+
+
+.img-izquierda {
+  float: left;
+  max-height: 200%;
+  max-width: 200px; /* Ajusta el valor según el tamaño deseado */
+  margin-left: -70px;
+  
+}
+
+/* Estilo para ocultar la ventana emergente inicialmente */
+.hidden {
+  display: none;
+}
+
+/* Estilo para la ventana emergente de productos */
+#productWindow {
+  position: absolute;
+  top: 40px; /* Ajusta la posición vertical según la altura de tu navbar */
+  right: 0;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2f3551;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }

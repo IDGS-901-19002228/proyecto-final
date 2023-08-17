@@ -28,6 +28,12 @@ import { AdministrarModule } from './proyecto/usuario/administrar/administrar/ad
 import { PagoComponent } from './proyecto/carrito/pago/pago.component';
 import { CarritoCompraComponent } from './proyecto/carrito/carrito-compra/carrito-compra.component';
 import { VentasComponent } from './proyecto/ventas/ventas.component';
+import { AgregarProductoComponent } from './proyecto/agregar-producto/agregar-producto.component';
+import { ProveedorModule } from './proyecto/proveedores/proveedor/proveedor.module';
+import { ProveedoresModule } from './proyecto/proveedores/list-proveedores/proveedores/proveedores.module';
+import { CRUDusuarioComponent } from './proyecto/crudusuario/crudusuario.component';
+import { ClientesComponent } from './proyecto/clientes/clientes.component';
+import { PerfilComponent } from './proyecto/perfil/perfil.component';
 
 
 
@@ -42,7 +48,11 @@ import { VentasComponent } from './proyecto/ventas/ventas.component';
     CarritoCompraComponent,
     PagoComponent,
     VentasComponent,
-    HomeComponent
+    HomeComponent,
+    AgregarProductoComponent,
+    CRUDusuarioComponent,
+    ClientesComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +70,8 @@ import { VentasComponent } from './proyecto/ventas/ventas.component';
     AcercaDeModule,
     UsuarioModule,
     AdministrarModule,
+    ProveedorModule,
+    ProveedoresModule,
     AppRoutingModule,
     RouterModule
   ],

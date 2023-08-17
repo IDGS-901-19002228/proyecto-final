@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-administrar',
@@ -27,12 +28,32 @@ export class AdministrarComponent {
 
 
   obtenerUsuarios() {
-    this.http.get('https://localhost:7049/api/Grupos').subscribe(
+    this.http.get('https://localhost:7054/api/Usuarios').subscribe(
       (response: any) => {
         this.usuarios = response;
       },
       (error) => {
         console.error('Error al obtener usuarios:', error);
+      }
+    );
+  }
+
+  eliminarUsuario(id: number) {
+    this.http.delete(`https://localhost:7054/api/Usuarios/${id}`).subscribe(
+      () => {
+        this.obtenerUsuarios();
+        Swal.fire({
+          icon: 'success',
+          title: 'Éxito',
+          text: 'Usuario inhabilitado correctamente'
+        });
+      },
+      (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'No se pudo eliminar el usuario'
+        });
       }
     );
   }

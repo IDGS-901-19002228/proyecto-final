@@ -23,6 +23,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { CarritoCompraComponent } from "./proyecto/carrito/carrito-compra/carrito-compra.component";
 import { PagoComponent } from "./proyecto/carrito/pago/pago.component";
 import { VentasComponent } from "./proyecto/ventas/ventas.component";
+import { AgregarProductoComponent } from "./proyecto/agregar-producto/agregar-producto.component";
+import { ListProveedoresComponent } from "./proyecto/proveedores/list-proveedores/list-proveedores.component";
 
 const routes:Routes=[
     {path: '',redirectTo: '/home', pathMatch:'full'},
@@ -30,6 +32,7 @@ const routes:Routes=[
     {path: 'AdministracionComponent', component: AdministracionComponent },
     {path: 'CatalogoComponent', component: CatalogoComponent },
     {path: 'LoginComponent', component: LoginComponent },
+    {path: 'ListProveedoresComponent', component: ListProveedoresComponent },
     {path: 'ProveedoresComponent', component: ProveedoresComponent },
     {path: 'RegistroComponent', component: RegistroComponent },
     {path: 'AcercaDeComponent', component: AcercaDeComponent },
@@ -40,7 +43,8 @@ const routes:Routes=[
     {path: 'CarritoCompraComponent', component: CarritoCompraComponent},
     {path: 'PagoComponent', component: PagoComponent},
     {path: 'VentasComponent', component: VentasComponent},
-
+    {path: 'AgregarProductoComponent', component: AgregarProductoComponent}
+    
 ];
 
 @NgModule({
