@@ -34,6 +34,14 @@ import { ProveedoresModule } from './proyecto/proveedores/list-proveedores/prove
 import { CRUDusuarioComponent } from './proyecto/crudusuario/crudusuario.component';
 import { ClientesComponent } from './proyecto/clientes/clientes.component';
 import { PerfilComponent } from './proyecto/perfil/perfil.component';
+import { ProductoModule } from './proyecto/agregar-producto/producto/producto.module';
+import { ListProductosModule } from './proyecto/agregar-producto/list-producto/list-productos/list-productos.module';
+import { ListMateriaPrimaComponent } from './proyecto/materia-prima/list-materia-prima/list-materia-prima.component';
+import { MateriasModule } from './proyecto/materia-prima/list-materia-prima/materias/materias.module';
+import { InsertMateriaModule } from './proyecto/materia-prima/insert-materia/insert-materia.module';
+import { RecetasModule } from './proyecto/receta/recetas/recetas.module';
+import { ComprasComponent } from './proyecto/compras/compras.component';
+import { DashboardsModule } from './proyecto/dashboard/dashboards/dashboards.module';
 
 
 
@@ -44,15 +52,14 @@ import { PerfilComponent } from './proyecto/perfil/perfil.component';
     MenuComponent,
     FooterComponent,
     AdministracionComponent,
-    MateriaPrimaComponent,
     CarritoCompraComponent,
     PagoComponent,
     VentasComponent,
     HomeComponent,
-    AgregarProductoComponent,
     CRUDusuarioComponent,
     ClientesComponent,
-    PerfilComponent
+    PerfilComponent,
+    ComprasComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +79,12 @@ import { PerfilComponent } from './proyecto/perfil/perfil.component';
     AdministrarModule,
     ProveedorModule,
     ProveedoresModule,
+    ProductoModule,
+    ListProductosModule,
+    InsertMateriaModule,
+    MateriasModule,
+    RecetasModule,
+    DashboardsModule,
     AppRoutingModule,
     RouterModule
   ],

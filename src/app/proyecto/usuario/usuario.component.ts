@@ -11,8 +11,8 @@ import { NgForm } from '@angular/forms'; // Asegúrate de importar NgForm
 export class UsuarioComponent {
 
   usuario = {id : 0, nombre: '', apellidoPaterno: '', apellidoMaterno: '', 
-             edad: 0, sexo: '', telefono: '', direccion: '', usuario: '', 
-             contrasenia: '', rolId: 0,  rol: '' }; // Modelo para los datos del formulario
+             edad: 0, sexo: '', telefono: '', direccion: '', correo: '', 
+             contrasenia: '', FechaRegistro: '', rolId: 0,  rol: '' }; // Modelo para los datos del formulario
 
   constructor(private http: HttpClient) {}
   
@@ -23,8 +23,8 @@ export class UsuarioComponent {
       (response) => {
         console.log('Usuario agregado:', response);
         this.usuario = { id: 0, nombre: '', apellidoPaterno: '', apellidoMaterno: '', 
-                         edad: 0, sexo: '', telefono: '', direccion: '', usuario: '', 
-                         contrasenia: '', rolId: 0, rol: '' };
+                         edad: 0, sexo: '', telefono: '', direccion: '', correo: '', 
+                         contrasenia: '', FechaRegistro: '', rolId: 0, rol: '' };
         Swal.fire({
           icon: 'success',
           title: 'Éxito',

@@ -25,6 +25,11 @@ import { PagoComponent } from "./proyecto/carrito/pago/pago.component";
 import { VentasComponent } from "./proyecto/ventas/ventas.component";
 import { AgregarProductoComponent } from "./proyecto/agregar-producto/agregar-producto.component";
 import { ListProveedoresComponent } from "./proyecto/proveedores/list-proveedores/list-proveedores.component";
+import { ListProductoComponent } from "./proyecto/agregar-producto/list-producto/list-producto.component";
+import { ListMateriaPrimaComponent } from "./proyecto/materia-prima/list-materia-prima/list-materia-prima.component";
+import { RecetaComponent } from "./proyecto/receta/receta.component";
+import { ComprasComponent } from "./proyecto/compras/compras.component";
+import { DashboardComponent } from "./proyecto/dashboard/dashboard.component";
 
 const routes:Routes=[
     {path: '',redirectTo: '/home', pathMatch:'full'},
@@ -38,12 +43,17 @@ const routes:Routes=[
     {path: 'AcercaDeComponent', component: AcercaDeComponent },
     {path: 'ProductosComponent', component: ProductosComponent },
     {path: 'MateriaPrimaComponent', component: MateriaPrimaComponent },
+    {path: 'ListMateriaPrimaComponent', component: ListMateriaPrimaComponent },
     {path: 'UsuarioComponent', component: UsuarioComponent},
     {path: 'AdministrarComponent', component: AdministrarComponent},
     {path: 'CarritoCompraComponent', component: CarritoCompraComponent},
     {path: 'PagoComponent', component: PagoComponent},
     {path: 'VentasComponent', component: VentasComponent},
-    {path: 'AgregarProductoComponent', component: AgregarProductoComponent}
+    {path: 'AgregarProductoComponent', component: AgregarProductoComponent},
+    {path: 'ListProductoComponent', component: ListProductoComponent },
+    {path: 'RecetaComponent', component: RecetaComponent },
+    {path: 'ComprasComponent', component: ComprasComponent },
+    {path: 'DashboardComponent', component: DashboardComponent },
     
 ];
 
