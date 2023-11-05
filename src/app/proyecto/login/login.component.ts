@@ -29,7 +29,7 @@ export class LoginComponent {
 
             if (estatusResponse.estatus === 'Activo') {
               // Usuario activo, proceder con la lógica existente
-              this.http.post('https://localhost:7049/api/Auth/login', this.cliente).subscribe(
+              this.http.post('https://localhost:7054/api/Auth/login', this.cliente).subscribe(
                 (response: any) => {
                   console.log(response);
 

@@ -142,16 +142,16 @@
                                 <button class="btn btn-warning text-white"
                                     *ngIf="usuario.rol !== 'Administrador' && usuario.estatus !== 'Inactivo'"
                                     (click)="alternarFormulario(usuario)">
-                                    <i class="fas fa-pencil-alt"></i>
+                                    <i class="fas fa-pencil-alt"></i>Modificar
                                 </button>
                                 <button class="btn btn-success text-white"
                                     *ngIf="usuario.rol !== 'Administrador' && usuario.estatus === 'Inactivo'"
                                     (click)="activarUsuario(usuario)">
-                                    <i class="fas fa-check"></i>
+                                    <i class="fas fa-check"></i>Activar
                                 </button>
                                 <button class="btn btn-danger mx-1" *ngIf="usuario.rol !== 'Administrador'"
                                     (click)="cambiarEstatus(usuario)">
-                                    <i class="fas fa-trash-alt"></i> <!-- Icono de eliminar -->
+                                    <i class="fas fa-trash-alt"></i> Eliminar<!-- Icono de eliminar -->
                                 </button>
                             </td>
                         </tr>

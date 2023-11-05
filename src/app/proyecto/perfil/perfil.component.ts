@@ -42,7 +42,7 @@ export class PerfilComponent implements OnInit {
   }
 
   obtenerDatos() {
-    this.http.get<any>(`https://localhost:7049/api/Cliente/${this.nombreUsuario}`)
+    this.http.get<any>(`https://localhost:7054/api/Cliente/${this.nombreUsuario}`)
       .subscribe(
         (response: any) => {
           this.datosCliente = response;
@@ -68,7 +68,7 @@ export class PerfilComponent implements OnInit {
 
   guardarCambios() {
     if (this.validarCamposLlenos()) {
-      this.http.put<any>('https://localhost:7049/api/Cliente/' + this.datosCliente.id, this.datosCliente)
+      this.http.put<any>('https://localhost:7054/api/Cliente/' + this.datosCliente.id, this.datosCliente)
       .subscribe(
         (response: any) => {
           console.log('Cambios guardados:', response);

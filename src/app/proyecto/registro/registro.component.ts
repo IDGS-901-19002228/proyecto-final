@@ -38,7 +38,7 @@ export class RegistroComponent {
                 cancelButtonText: 'Cancelar'
               }).then((result) => {
                 if (result.isConfirmed) {
-                  this.http.post('https://localhost:7049/api/Cliente', this.cliente).subscribe(
+                  this.http.post('https://localhost:7054/api/Cliente', this.cliente).subscribe(
                     (response) => {
                       console.log('Usuario agregado:', response);
                       this.cliente = {

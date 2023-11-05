@@ -26,30 +26,74 @@
                             <th>Folio</th>
                             <th>Fecha de Venta</th>
                             <th>Cliente</th>
-                            <th>Cantidad</th>
-                            <th>Total</th>
+                            <th>Ver productos</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody *ngFor="let venta of ventas">
                             <tr>
-                                <td>0001</td>
-                                <td>2023-01-15</td>
-                                <td>Cliente A</td>
-                                <td>5</td>
-                                <td>$20.00</td>
-                            </tr>
-                            <tr>
-                                <td>0002</td>
-                                <td>2023-02-03</td>
-                                <td>Cliente B</td>
-                                <td>3</td>
-                                <td>$15.00</td>
+                                <td>{{venta.id}}</td>
+                                <td>{{venta.fecha}}</td>
+                                <td>{{venta.cliente}}</td>
+                               
+                                <td><!--   -->
+                                    <button class="btn btn-link"   (click)="detallesventas(venta.id)"
+                                    data-bs-toggle="modal" data-bs-target="#divDetalleCompra">
+                                            <i class="fa fa-eye"></i> 
+                                      </button>
+                                  
+                                </td>
                             </tr>
                                 <!-- Agregar más filas según las ventas realizadas -->
                             </tbody>
                 </table>
         </form>
     </div>    
+
+
+    
+    <div class="modal fade" id="divDetalleCompra" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="border-radius: 10px;">
+            <div class="modal-content">
+                <div class="modal-header"  style="background-color: #2f3551;">
+                    <img class="float-start" src="./assets/img/logo_natural_life.png" alt=""
+                        style="width: 45px; margin-right: 10px;">
+                    <span class="text-white text-table pt-2" id="centrar-elemento">
+                        <b>DETALLE DE LA COMPRA</b></span>
+                    <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="bx bx-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body" style="background: #FFFFFF;">
+                    <div class="card-body border-dark">
+                        
+    
+                          <table class="table table-hover">
+                            <thead style="background: #002454; color: #FFFFFF">
+                                <tr class="text-center">
+                                    <th>Materia Prima</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr  *ngFor="let detalle of detalles" >
+                                    <td> {{detalle.nombreproducto}}</td>
+                                    <td>{{detalle.cantidad}}</td>
+                                    <td>{{detalle.precioUnitario}}</td>
+                                    
+                                    </tr><tr>
+                                        <td colspan="2"><strong>Total:</strong></td>
+                                        <td>{{ calcularTotal() }}</td>
+                                      </tr>
+                            </tbody>
+                        </table>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+
 </body>
 </html>
-

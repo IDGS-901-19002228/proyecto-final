@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import swal from 'sweetalert2';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-// import { resposeI } from 'src/app/interfaces/response.interface';
-// import { CompraMateriaService } from 'src/app/services/compra_materia.service';
-
+import Swal from 'sweetalert2';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-compras',
@@ -13,9 +9,60 @@ import { Router } from '@angular/router';
   styleUrls: ['./compras.component.css']
 })
 export class ComprasComponent {
+  proveedores: any[] = [];
+  materiasP: any[] = [];
+  compra = {id_compra_materia: 0, fecha: '', idProveedor: 0, id_materia_prima: 0, cantidad: 0, costo_compra: 0, estatus: ''};
 
-  
-  
+  constructor(private http: HttpClient) {}
 
-  
+  ngOnInit() {
+    this.obtenerProveedores();
+    this.obtenerMateriaPrima();
+  }
+
+  submitForm(formulario: NgForm) {
+    if (formulario.valid) {
+    this.http.post('https://localhost:7054/api/Compras/realizar-compra', this.compra).subscribe(
+      (response) => {
+        console.log('compra agregado:', response);
+        this.compra = {id_compra_materia: 0, fecha: '', idProveedor: 0, id_materia_prima: 0, cantidad: 0, costo_compra: 0, estatus: ''};  
+        Swal.fire({
+          icon: 'success',
+          title: 'Éxito',
+          text: 'Compra registrado correctamente'
+        });
+      },
+    );
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Debes completar todos los campos'
+      });
+    }
+  }
+
+
+
+  obtenerProveedores() {
+    this.http.get('https://localhost:7054/api/Proveedor').subscribe(
+      (response: any) => {
+        this.proveedores = response;
+      },
+      (error) => {
+        console.error('Error al obtener proveedores:', error);
+      }
+    );
+  }
+
+  obtenerMateriaPrima() {
+    this.http.get('https://localhost:7054/api/MateriaPrima').subscribe(
+      (response: any) => {
+        this.materiasP = response;
+      },
+      (error) => {
+        console.error('Error al obtener el catálogo de materia prima:', error);
+      }
+    );
+  }
 }

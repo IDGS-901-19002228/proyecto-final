@@ -2,28 +2,29 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { NgForm } from '@angular/forms'; // Asegúrate de importar NgForm
+import { CarritoService } from 'src/app/carrito.service';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
   styleUrls: ['./catalogo.component.css']
 })
-export class CatalogoComponent {
+export class CatalogoComponent implements OnInit {
 
-  productos: any[] = []; // Aquí almacenaremos la lista de usuarios
-
+  
+  productos: any[] = [];
   mostrarFormulario = false;
-  productoSeleccionado: any = {}; // Declarar esta variable en tu componente
+  productoSeleccionado: any = {}; // Objeto para almacenar el producto seleccionado
 
-
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private carritoService: CarritoService, private userService: UserService) {}
 
   ngOnInit() {
     this.obtenerProductos();
   }
 
   alternarFormulario(producto: any) {
-    this.productoSeleccionado = producto; // Asigna los valores del usuario
+    this.productoSeleccionado = { ...producto };
     this.mostrarFormulario = !this.mostrarFormulario;
   }
 
@@ -37,5 +38,37 @@ export class CatalogoComponent {
       }
     );
   }
+
+  // Método para seleccionar un producto
+  seleccionarProducto(producto: any) {
+    this.productoSeleccionado = { ...producto };
+  }
+
+
+  
+
+agregarAlCarrito(producto: any) {
+    const idCliente = this.userService.getIdCliente();
+    const carritoItem = {
+      idCliente: idCliente,
+      idProducto: producto.id,
+      cantidad: 1 // Puedes ajustar esto según tus necesidades
+    };
+
+    this.http.post('https://localhost:7054/api/Carrito/agregar', carritoItem).subscribe(
+      (response) => {
+        console.log('Producto agregado al carrito:', response);
+        // Agregar lógica adicional si es necesario, como mostrar una notificación de éxito
+
+        // Agregar el producto al carrito local
+        this.carritoService.agregarProductoAlCarrito(carritoItem);
+      },
+      (error) => {
+        console.error('Error al agregar producto al carrito:', error);
+        // Agregar lógica adicional para manejar el error, como mostrar una notificación de error
+      }
+    );
+  }
+
 
 }

@@ -50,7 +50,7 @@ export class ClientesComponent {
 }
 
   obtenerUsuarios() {
-    this.http.get('https://localhost:7049/api/Cliente').subscribe(
+    this.http.get('https://localhost:7054/api/Cliente').subscribe(
       (response: any) => {
         this.clientes = response;
       },
@@ -63,7 +63,7 @@ export class ClientesComponent {
   guardarCambios(formulario: NgForm) {
     if (formulario.valid) {
       // Envía la solicitud PUT a la API para actualizar los datos del cliente
-      this.http.put('https://localhost:7049/api/Cliente/' + this.clienteSeleccionado.id, this.clienteSeleccionado)
+      this.http.put('https://localhost:7054/api/Cliente/' + this.clienteSeleccionado.id, this.clienteSeleccionado)
       .subscribe(
         (response: any) => {
           // Actualiza la lista de clientes con los nuevos datos
@@ -93,7 +93,7 @@ export class ClientesComponent {
     if (cliente.estatus == 'Activo') {
       // Cambia el estatus a 'Inactivo'
     cliente.estatus = 'Inactivo';
-    this.http.put('https://localhost:7049/api/Cliente/' + cliente.id, cliente)
+    this.http.put('https://localhost:7054/api/Cliente/' + cliente.id, cliente)
       .subscribe(
         (response: any) => {
           // Actualiza la lista de clientes con los nuevos datos
@@ -121,7 +121,7 @@ export class ClientesComponent {
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.isConfirmed) {
-          this.http.delete('https://localhost:7049/api/Cliente/' + cliente.id)
+          this.http.delete('https://localhost:7054/api/Cliente/' + cliente.id)
             .subscribe(
               (response: any) => {
                 // Actualiza la lista de clientes con los nuevos datos
@@ -145,7 +145,7 @@ export class ClientesComponent {
 
   activarUsuario(cliente: any){
     cliente.estatus = 'Activo';
-    this.http.put('https://localhost:7049/api/Cliente/' + cliente.id, cliente)
+    this.http.put('https://localhost:7054/api/Cliente/' + cliente.id, cliente)
       .subscribe(
         (response: any) => {
           // Actualiza la lista de clientes con los nuevos datos

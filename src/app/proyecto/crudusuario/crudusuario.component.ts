@@ -51,7 +51,7 @@ export class CRUDusuarioComponent {
 }
 
   obtenerUsuarios() {
-    this.http.get('https://localhost:7049/api/Proyecto').subscribe(
+    this.http.get('https://localhost:7054/api/Usuarios').subscribe(
       (response: any) => {
         this.usuarios = response;
       },
@@ -64,7 +64,7 @@ export class CRUDusuarioComponent {
   guardarCambios(formulario: NgForm) {
     if (formulario.valid) {
       // Envía la solicitud PUT a la API para actualizar los datos del usuario
-      this.http.put('https://localhost:7049/api/Proyecto/' + this.usuarioSeleccionado.id, this.usuarioSeleccionado)
+      this.http.put('https://localhost:7054/api/Usuarios/' + this.usuarioSeleccionado.id, this.usuarioSeleccionado)
       .subscribe(
         (response: any) => {
           // Actualiza la lista de usuarios con los nuevos datos
@@ -94,7 +94,7 @@ export class CRUDusuarioComponent {
     if (usuario.estatus == 'Activo') {
       // Cambia el estatus a 'Inactivo'
     usuario.estatus = 'Inactivo';
-    this.http.put('https://localhost:7049/api/Proyecto/' + usuario.id, usuario)
+    this.http.put('https://localhost:7054/api/Usuarios/' + usuario.id, usuario)
       .subscribe(
         (response: any) => {
           // Actualiza la lista de usuarios con los nuevos datos
@@ -122,7 +122,7 @@ export class CRUDusuarioComponent {
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.isConfirmed) {
-          this.http.delete('https://localhost:7049/api/Proyecto/' + usuario.id)
+          this.http.delete('https://localhost:7054/api/Usuarios/' + usuario.id)
             .subscribe(
               (response: any) => {
                 // Actualiza la lista de usuarios con los nuevos datos
@@ -146,7 +146,7 @@ export class CRUDusuarioComponent {
 
   activarUsuario(usuario: any){
     usuario.estatus = 'Activo';
-    this.http.put('https://localhost:7049/api/Proyecto/' + usuario.id, usuario)
+    this.http.put('https://localhost:7049/api/Usuarios/' + usuario.id, usuario)
       .subscribe(
         (response: any) => {
           // Actualiza la lista de usuarios con los nuevos datos

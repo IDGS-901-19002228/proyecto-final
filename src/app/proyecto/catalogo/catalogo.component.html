@@ -17,52 +17,30 @@
         </section> -->
 
         <section class="py-5">
-            <div class=" px-4 px-lg-5 mt-5" *ngFor="let producto of productos">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100" >
-                            <!-- Product image-->
-                            <img class="card-img-top img-1" src="{{ producto.imagen }}" alt="..." />
-                            <hr>
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h3><b>{{ producto.nombre }}</b></h3>
-                                    <h5 class="fw-bolder">{{ producto.descripcion }}</h5>
-                                    <!-- Product price-->
-                                    {{ producto.precio }}
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto" href="/ProductosComponent">View options</a>
-                                </div>
-                            </div>
-                        </div>
+          <div class="px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+              <div class="col mb-5" *ngFor="let producto of productos">
+                <div class="card h-100">
+                  <img class="card-img-top img-1" [src]="producto.imagen" alt="..." />
+                  <hr />
+                  <div class="card-body p-4">
+                    <div class="text-center">
+                      <h3><b>{{ producto.nombre }}</b></h3>
+                      <h5 class="fw-bolder">{{ producto.descripcion }}</h5>
+                      Precio: ${{ producto.precio }}
                     </div>
+                  </div>
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center">
+                      <button class="btn btn-outline-dark mt-auto" (click)="agregarAlCarrito(producto)">
+                        Agregar al carrito
+                      </button>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-
-            
+          </div>
         </section>
-
         
-        <div *ngFor="let producto of productos" class="producto-card">
-            <div class="producto-info">
-              <h3>{{ producto.nombre }}</h3>
-              <p>Precio: {{ producto.precio }}</p>
-              <p>Stock: {{ producto.stock }}</p>
-            </div>
-            <button (click)="alternarFormulario(producto)">Ver detalles</button>
-          </div>
-          
-          <div *ngIf="mostrarFormulario" class="formulario">
-            <h4>Detalles del producto</h4>
-            <p>Nombre: {{ productoSeleccionado.nombre }}</p>
-            <p>Precio: {{ productoSeleccionado.precio }}</p>
-            <p>Stock: {{ productoSeleccionado.stock }}</p>
-            <!-- Aquí puedes agregar más detalles según la estructura de tu producto -->
-          </div>
           

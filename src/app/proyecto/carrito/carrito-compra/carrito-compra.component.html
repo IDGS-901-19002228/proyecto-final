@@ -9,96 +9,47 @@
 <body>
     <div class="container mt-5">
         <div>
-            <h2>Tu Carrito de Compras</h2>
-            <button class="btn btn-primary" id="moverContenidoBtn">Mover todo</button>
+          <h2>Tu Carrito de Compras</h2>
         </div><br>
-        
+      
         <!-- Tabla de Productos -->
         <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                    <th>Acciones</th> <!-- Columna para botones de suma/resta -->
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Producto 1</td>
-                    <td>$20.00</td>
-                    <td>1</td>
-                    <td>
-                        <button class="btn btn-success btn-sm" type="button">
-                            <i class="bi-plus"></i>boton
-                        </button>
-                        <button class="btn btn-danger btn-sm" type="button">
-                            <i class="bi-dash"></i>boton
-                        </button>
-                    </td>
-                </tr>
-                <!-- Agregar más filas según los productos -->
-            </tbody>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let producto of productosEnCarrito; let i = index">
+              <td>{{ producto.nombre }}</td>
+              <td>${{ producto.precio }}</td>
+              <td>{{ producto.cantidad }}</td>
+              <td>
+                <button class="btn btn-danger btn-sm" (click)="eliminarProducto(i)">
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+          </tbody>
         </table>
-        
+      
         <!-- Tabla de Resumen de Compra -->
-        <table class="table table-bordered">
-            <tbody>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>$20.00</td>
-                </tr>
-                <tr>
-                    <td>Precio de envío</td>
-                    <td>$5.00</td>
-                </tr>
-                <tr>
-                    <td>Garantía del envío</td>
-                    <td>$19.00</td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td>$25.00</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Tabla de Forma de Pago -->
-        <h2>Forma de Pago</h2>
-        <table class="table table-bordered">
-            <tbody>
-                <tr>
-                    <td>
-                        <input type="radio" id="paypal" name="formaPago" value="paypal">
-                        <label for="paypal">PayPal</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" id="tarjeta" name="formaPago" value="tarjeta">
-                        <label for="tarjeta">Tarjeta de Crédito/Débito</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="radio" id="spei" name="formaPago" value="spei">
-                        <label for="spei">SPEI</label>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
+        <!-- Agregar tabla de resumen si es necesario -->
+      
+        <!-- Botones para volver o confirmar compra -->
         <div class="container">
-            <button class="btn btn-danger" type="button" routerLink="/CatalogoComponent">
-                <i class="bi-cart-fill me-1"></i>
-                Volver
-            </button>
-            
-            <button class="btn btn-primary" type="button" routerLink="/PagoComponent">
-                <i class="bi-cart-fill me-1"></i>
-                Confirmar
-            </button>
+          <button class="btn btn-danger" type="button" routerLink="/CatalogoComponent">
+            Volver
+          </button>
+          <button class="btn btn-primary" type="button" routerLink="/PagoComponent">
+            Confirmar Compra
+          </button>
         </div>
-    </div>
+      </div>
+      
+      
 </body>
 </html>

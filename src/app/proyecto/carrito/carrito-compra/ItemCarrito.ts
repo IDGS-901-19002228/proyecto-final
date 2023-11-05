@@ -1,6 +1,5 @@
 export class ItemCarrito{
-    id_Producto: string | undefined;
-    nombre: string | undefined;
-    precio: string | undefined;
+    idProducto: number = 0;
+    idCliente: number = 0;
     cantidad: string | undefined;
 }

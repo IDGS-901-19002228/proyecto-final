@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 })
 export class ListMateriaPrimaComponent {
 
-  proveedores: any[] = [];
+  // proveedores: any[] = [];
   materiasP: any[] = []; // Aquí almacenaremos la lista de usuarios
 
   mostrarFormulario = false;
@@ -22,8 +22,8 @@ export class ListMateriaPrimaComponent {
     this.obtenerMateriaPrima();
   }
 
-  alternarFormulario(materiaP: any) {
-    this.materiaPSeleccionado = materiaP; // Asigna los valores del usuario
+  alternarFormulario(materia: any) {
+    this.materiaPSeleccionado = materia; // Asigna los valores del usuario
     this.mostrarFormulario = !this.mostrarFormulario;
   }
 
@@ -44,19 +44,19 @@ export class ListMateriaPrimaComponent {
         this.materiasP = response;
       },
       (error) => {
-        console.error('Error al obtener proveedores:', error);
+        console.error('Error al obtener el catalogo de materia prima:', error);
       }
     );
   }
 
-  eliminarProveedor(id: number) {
+  eliminarMateriaP(id: number) {
     this.http.delete(`https://localhost:7054/api/MateriaPrima/${id}`).subscribe(
       () => {
         this.obtenerMateriaPrima();
         Swal.fire({
           icon: 'success',
           title: 'Éxito',
-          text: 'Usuario inhabilitado correctamente'
+          text: 'Materia prima eliminada correctamente'
         });
       },
       (error) => {

@@ -1,67 +1,89 @@
-.form-container {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px dotted #2f3551;
-}
-
-.form-header {
+.card-header {
     background-color: #2f3551;
-    color: #fff;
-    padding: 10px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+
+}
+
+.title {
+    color: white;
+
+}
+
+.btn1 {
+
+    background-color: #2f3551;
+    /* color de fondo */
+    border: 15%;
+    /* eliminamos borde */
+    color: white;
+    /* color del texto */
+    padding: 10px 20px;
+    /* tamaño del padding */
     text-align: center;
-    margin: -15px -15px 15px -15px;
+    /* alineación del texto */
+    text-decoration: none;
+    /* eliminamos subrayado */
+    display: inline-block;
+    /* convertimos en bloque */
+    font-size: 16px;
+    /* tamaño de fuente */
+    margin: 4px 2px;
+    /* margen */
+    cursor: pointer;
+    /* cambiamos el cursor */
+    border-radius: 10px;
+    /* agregamos bordes redondeados */
+    border-color: #2f3551;
+
 }
 
-.form-title {
-    margin: 0;
-    font-weight: bold;
-}
-
-.tabla{
-    margin-left: 80px;
-}
-
-.tabla {
-    border-collapse: separate;
-    border-spacing: 0;
-    border-radius: 10px; /* Aplica esquinas redondas */
-    overflow: hidden; /* Oculta las esquinas que sobresalen */
-}
-
-.tabla thead th:first-child {
-    border-top-left-radius: 10px; /* Redondea la esquina superior izquierda */
-}
-
-.tabla thead th:last-child {
-    border-top-right-radius: 10px; /* Redondea la esquina superior derecha */
-}
-
-.tabla.width{
-    margin-left: 0px;
-}
-
-.btn-form{
-    text-align: center;
-    margin-top: 10px;
-}
-
-.tabla-container {
-    transition: all 0.3s ease-in-out;
-}
-
-.tabla-container.expanded {
-    width: 100%;
-}
-
-.table th {
-    background-color: #2f3551; /* Color azul */
-    color: #ffffff; /* Color blanco para las letras */
-    font-weight: 500;
+.btn1:hover {
+    background-color: #E6FFD4;
+    /* Cambia el color de fondo al pasar el cursor sobre el botón */
+    border-color: #8CB370;
+    /* Cambia el color del borde al pasar el cursor sobre el botón */
+    color: black;
     
 }
 
 
+.btn-primary {
+    background-color: #2f3551;
+    border-color: #2f3551;
+    margin-bottom: 30px;
+    margin-top: 5px;
+  }
 
+
+.btnC {
+    background-color: #ea6868;
+    /* color de fondo */
+    border: 15%;
+    /* eliminamos borde */
+    color: white;
+    /* color del texto */
+    padding: 10px 20px;
+    /* tamaño del padding */
+    text-align: center;
+    /* alineación del texto */
+    text-decoration: none;
+    /* eliminamos subrayado */
+    display: inline-block;
+    /* convertimos en bloque */
+    font-size: 16px;
+    /* tamaño de fuente */
+    margin: 4px 2px;
+    /* margen */
+    cursor: pointer;
+    /* cambiamos el cursor */
+    border-radius: 10px;
+    /* agregamos bordes redondeados */
+    border-color: #e4aaa5;
+}
+
+.btnC:hover {
+    background-color: #e4aaa5;
+    /* Cambia el color de fondo al pasar el cursor sobre el botón */
+    border-color: #ea6868;
+    /* Cambia el color del borde al pasar el cursor sobre el botón */
+    color: black;
+}

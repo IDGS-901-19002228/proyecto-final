@@ -24,7 +24,7 @@ export class ListProveedoresComponent {
   alternarFormulario(proveedor: any) {
     this.proveedorSeleccionado = proveedor; // Asigna los valores del usuario
     this.mostrarFormulario = !this.mostrarFormulario;
-}
+  }
 
 
 obtenerProveedores() {

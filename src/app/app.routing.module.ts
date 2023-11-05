@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from "@angular/router";
 import { NgModule } from "@angular/core";
+
 import { HomeComponent } from "./home/home.component";
 import { AdministracionComponent } from "./proyecto/administracion/administracion.component";
 import { CatalogoComponent } from "./proyecto/catalogo/catalogo.component";
@@ -30,6 +31,12 @@ import { ListMateriaPrimaComponent } from "./proyecto/materia-prima/list-materia
 import { RecetaComponent } from "./proyecto/receta/receta.component";
 import { ComprasComponent } from "./proyecto/compras/compras.component";
 import { DashboardComponent } from "./proyecto/dashboard/dashboard.component";
+import { MostrarComprasComponent } from "./proyecto/compras/mostrar-compras/mostrar-compras.component";
+import { MostrarRecetasComponent } from "./proyecto/receta/mostrar-recetas/mostrar-recetas.component";
+import { DireccionesComponent } from "./proyecto/direcciones/direcciones.component";
+import { CRUDusuarioComponent } from "./proyecto/crudusuario/crudusuario.component";
+import { ClientesComponent } from "./proyecto/clientes/clientes.component";
+import { PerfilComponent } from "./proyecto/perfil/perfil.component";
 
 const routes:Routes=[
     {path: '',redirectTo: '/home', pathMatch:'full'},
@@ -54,7 +61,14 @@ const routes:Routes=[
     {path: 'RecetaComponent', component: RecetaComponent },
     {path: 'ComprasComponent', component: ComprasComponent },
     {path: 'DashboardComponent', component: DashboardComponent },
+    {path: 'MostrarComprasComponent', component: MostrarComprasComponent },
+    {path: 'MostrarRecetasComponent', component: MostrarRecetasComponent },
+    {path: 'DireccionesComponent', component: DireccionesComponent },
+    {path: 'CRUDusuarioComponent', component: CRUDusuarioComponent },
+    {path: 'ClientesComponent', component: ClientesComponent },
+    {path: 'PerfilComponent', component: PerfilComponent },
     
+
 ];
 
 @NgModule({

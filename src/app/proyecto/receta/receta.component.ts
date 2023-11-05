@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { NgForm } from '@angular/forms';
@@ -8,17 +9,14 @@ import { NgForm } from '@angular/forms';
   templateUrl: './receta.component.html',
   styleUrls: ['./receta.component.css']
 })
-export class RecetaComponent  implements OnInit{
-
-  receta: any = {
-    Nombre: '',
-    IdProducto: 0,
-    CantidadProducto: 0,
-    MateriasPrimas: []
-  };
+export class RecetaComponent implements OnInit {
 
   productos: any[] = [];
   materiasP: any[] = [];
+  receta = {id: 0, nombre: '', ingredientesMateriaP: '', idProducto: 0, cantidad: 0, cantidadProducto: 0, 
+  estatus: '', 
+  ingredientes: [] as { ingrediente: string, cantidad: string }[]
+  };
 
   constructor(private http: HttpClient) {}
 
@@ -27,40 +25,31 @@ export class RecetaComponent  implements OnInit{
     this.obtenerMateriaPrima();
   }
 
-  agregarMateriaPrima() {
-    this.receta.MateriasPrimas.push({ IdMateriaPrima: 0, Cantidad: 0 });
-  }
+  agregarIngrediente() {
+    this.receta.ingredientes.push({ ingrediente: '', cantidad: '' });
+}
 
-  eliminarMateriaPrima(index: number) {
-    this.receta.MateriasPrimas.splice(index, 1);
+  // Remove ingredient and quantity by index
+  eliminarIngrediente(index: number) {
+    this.receta.ingredientes.splice(index, 1);
   }
 
   submitForm(formulario: NgForm) {
     if (formulario.valid) {
-      this.http.post('https://localhost:7054/api/Receta/agregarReceta', this.receta).subscribe(
-        () => {
-          this.receta = {
-            Nombre: '',
-            IdProducto: 0,
-            CantidadProducto: 0,
-            MateriasPrimas: []
-          };
-          Swal.fire({
-            icon: 'success',
-            title: 'Éxito',
-            text: 'Receta agregada correctamente'
-          });
-        },
-        (error) => {
-          console.error('Error al agregar receta:', error);
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'No se pudo agregar la receta'
-          });
-        }
-      );
-    } else {
+      // Concatenate ingredients and quantities
+      this.receta.ingredientesMateriaP = this.receta.ingredientes.map(ingredient => `${ingredient.ingrediente} - ${ingredient.cantidad}`).join(', ');
+    this.http.post('https://localhost:7054/api/Receta/agregarReceta', this.receta).subscribe(
+      (response) => {
+        console.log('compra agregado:', response);
+        this.receta = {id: 0, nombre: '', ingredientesMateriaP: '', idProducto: 0, cantidad: 0, cantidadProducto: 0, estatus: '', ingredientes: []};  
+        Swal.fire({
+          icon: 'success',
+          title: 'Éxito',
+          text: 'Receta registrada correctamente'
+        });
+      },
+    );
+    }else{
       Swal.fire({
         icon: 'error',
         title: 'Error',
@@ -68,6 +57,7 @@ export class RecetaComponent  implements OnInit{
       });
     }
   }
+
 
   obtenerProductos() {
     this.http.get('https://localhost:7054/api/Productos').subscribe(
@@ -86,9 +76,8 @@ export class RecetaComponent  implements OnInit{
         this.materiasP = response;
       },
       (error) => {
-        console.error('Error al obtener materias primas:', error);
+        console.error('Error al obtener el catálogo de materia prima:', error);
       }
     );
   }
-
 }

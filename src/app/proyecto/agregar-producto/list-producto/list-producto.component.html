@@ -1,8 +1,9 @@
 <section>
-    <div class="container-fluid" style="padding:50px; padding-top: 20px;">
+    <div class="container-fluid" style="padding:50px; padding-top: 20px;"
+    *ngIf="usuarioTipo === 'Empleado' || usuarioTipo === 'Administrador'">
         <div class=" row">
-            <a routerLink="/RecetaComponent" class="btn btn-warning float-end ms-3">
-                <i class="icon-pencil icon-white"></i>Ver recetas
+            <a routerLink="/RecetaComponent" class="btn btn-success float-end ms-3">
+                <i class="icon-pencil icon-white"></i>Agregar receta
             </a>
             <!-- Formulario de edición -->
             <div class="col-md-{{ mostrarFormulario ? '3' : '0' }} form-container" *ngIf="mostrarFormulario">
@@ -73,7 +74,6 @@
                             <th *ngIf="!mostrarFormulario">Stock</th>
                             <th>Estatus</th>
                             <th>Acciones</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,13 +91,10 @@
                                 <button class="btn btn-danger mx-1" (click)="eliminarProducto(producto.id)">
                                   <i class="fas fa-trash-alt"></i>Eliminar
                                 </button>
-                                <button class="btn btn-primary mx-1" (click)="fabricarProducto(producto.id)">
+                                <button class="btn btn-primary mx-1"  (click)="fabricarProducto(producto.id)">
                                   <i class="fas fa-tools"></i>Fabricar
                                 </button>
-                                <button class="btn btn-info mx-1" (click)="verReceta(producto.id)">
-                                  <i class="fas fa-book"></i>Ver Receta
-                                </button>
-                              </td>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

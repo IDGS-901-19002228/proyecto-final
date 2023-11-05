@@ -13,6 +13,7 @@ export class MateriaPrimaComponent {
   proveedores: any[] = [];
   materiaPrima = {id : 0, nombre: '', descripcion: '', cantidad: 0, unidad_medida: '', stock: 0}; 
 
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {

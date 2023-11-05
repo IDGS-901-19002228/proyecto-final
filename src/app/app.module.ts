@@ -42,6 +42,11 @@ import { InsertMateriaModule } from './proyecto/materia-prima/insert-materia/ins
 import { RecetasModule } from './proyecto/receta/recetas/recetas.module';
 import { ComprasComponent } from './proyecto/compras/compras.component';
 import { DashboardsModule } from './proyecto/dashboard/dashboards/dashboards.module';
+import { ComprasModule } from './proyecto/compras/compras/compras.module';
+import { MostrarCModule } from './proyecto/compras/mostrar-compras/mostrar-c/mostrar-c.module';
+import { MostrarRctaModule } from './proyecto/receta/mostrar-recetas/mostrar-rcta/mostrar-rcta.module';
+import { DireccionesModule } from './proyecto/direcciones/direcciones/direcciones.module';
+import { CatalogoModule } from './proyecto/catalogo/catalogo/catalogo.module';
 
 
 
@@ -58,8 +63,7 @@ import { DashboardsModule } from './proyecto/dashboard/dashboards/dashboards.mod
     HomeComponent,
     CRUDusuarioComponent,
     ClientesComponent,
-    PerfilComponent,
-    ComprasComponent
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +88,12 @@ import { DashboardsModule } from './proyecto/dashboard/dashboards/dashboards.mod
     InsertMateriaModule,
     MateriasModule,
     RecetasModule,
+    MostrarRctaModule,
     DashboardsModule,
+    ComprasModule,
+    MostrarCModule,
+    DireccionesModule,
+    CatalogoModule,
     AppRoutingModule,
     RouterModule
   ],
